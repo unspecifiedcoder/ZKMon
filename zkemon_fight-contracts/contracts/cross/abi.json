@@ -1,0 +1,73 @@
+{
+  "inputs": [
+    {
+      "name": "agility",
+      "public": false,
+      "type": "array",
+      "components": {
+        "size": 3,
+        "type": "field"
+      }
+    },
+    {
+      "name": "power",
+      "public": false,
+      "type": "array",
+      "components": {
+        "size": 3,
+        "type": "field"
+      }
+    },
+    {
+      "name": "defense",
+      "public": false,
+      "type": "array",
+      "components": {
+        "size": 3,
+        "type": "field"
+      }
+    },
+    {
+      "name": "fam",
+      "public": false,
+      "type": "array",
+      "components": {
+        "size": 3,
+        "type": "field"
+      }
+    },
+    {
+      "name": "hash1",
+      "public": true,
+      "type": "array",
+      "components": {
+        "size": 2,
+        "type": "field"
+      }
+    },
+    {
+      "name": "hash2",
+      "public": true,
+      "type": "array",
+      "components": {
+        "size": 2,
+        "type": "field"
+      }
+    },
+    {
+      "name": "hash3",
+      "public": true,
+      "type": "array",
+      "components": {
+        "size": 2,
+        "type": "field"
+      }
+    }
+  ],
+  "output": {
+    "type": "tuple",
+    "components": {
+      "elements": []
+    }
+  }
+}

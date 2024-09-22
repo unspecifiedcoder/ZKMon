@@ -1,0 +1,29 @@
+import "hashes/sha256/512bitPacked" as sha256packed;
+
+
+def main(private field[2] agility, private field[2] power , private field[2] defense , private field[2] fam , field[2] hash1 , field[2] hash2 , field blockstart , field currentBlock )  {
+    // check for boundaries
+    assert(agility[0] < 500 && agility[1] < 500);
+    assert(power[0] < 500 && power[1] < 500);
+    assert(defense[0] < 500 && defense[1] < 500);
+    assert(fam[0] < 5 && fam[1] < 5);
+
+    // compute hashes and verify
+    // user1
+    field[2] h1 = sha256packed([agility[0], power[0], defense[0], fam[0]]);
+    assert(h1[0] == hash1[0]);
+    assert(h1[1] == hash1[1]);
+    
+    // user2
+    field[2] h2 = sha256packed([agility[1], power[1], defense[1], fam[1]]);
+    assert(h2[0] == hash2[0]);
+    assert(h2[1] == hash2[1]);
+   
+    assert(agility[0] < agility[1]);
+    assert(power[1] > power[0]);
+    assert(defense[1] > defense[0]);
+    assert(fam[1] == fam[0]);
+
+    field points = (currentBlock - blockstart) / 10000;
+    assert(agility[1] - agility[0] ==   points);
+}

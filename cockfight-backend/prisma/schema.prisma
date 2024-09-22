@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model attributes {
+  nftid Int @unique
+  id Int @default(autoincrement()) @id
+  
+  createdAt DateTime @default(now())
+  updatedat DateTime @updatedAt
+
+  agility Int 
+  defense Int
+  power Int
+  group Int
+
+  last_breed_Block Int 
+}
+

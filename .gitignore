@@ -1,0 +1,6 @@
+*.wtns
+witness
+out
+*.r1cs
+*.key
+node_modules
